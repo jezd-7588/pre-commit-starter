@@ -1,8 +1,8 @@
 # Pre-commit Starter
 
 ![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jezd-7588/https%3A%2F%2Fgithub.com%2Fjezd-7588%2Fpre-commit-starter/.github/workflows/gitleaks.yml)
 ![GitHub last commit](https://img.shields.io/github/last-commit/jezd-7588/pre-commit-starter)
+![GitHub Tag](https://img.shields.io/github/v/tag/jezd-7588/pre-commit-starter)
 
 
 
