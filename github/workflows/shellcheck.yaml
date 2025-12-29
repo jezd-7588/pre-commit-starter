@@ -1,0 +1,25 @@
+name: Bash SAST (ShellCheck)
+
+on:
+  push:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  shellcheck:
+    name: Run ShellCheck on Bash scripts
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+
+      - name: Run ShellCheck
+        run: |
+          # Find and analyze all .sh files
+          find . -type f -name "*.sh" -print0 | xargs -0 shellcheck
