@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+
+# get calling directory
+CALL_DIR="$(pwd)"
+
+# function to start installing
+start() {
+  # run in calling directory
+  cd "$CALL_DIR" || exit 1
+  pre_commit
+}
+
+pre_commit(){
+  if ! command -v pre-commit >/dev/null 2>&1; then
+    pipx install pre-commit
+  fi
+
+  if [ ! -f .pre-commit-config.yaml ]; then
+  cat > .pre-commit-config.yaml <<'EOF'
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+EOF
+fi
+
+
+  pre-commit install
+}
+
+pre_push(){
+  echo "Setting up pre-push hook..."
+  # Add commands to set up pre-push hook here
+}
+
+# Call the function
+start
