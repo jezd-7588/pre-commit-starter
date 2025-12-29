@@ -1,5 +1,9 @@
 # Pre-commit Starter
 
+![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)
+![GitHub last commit](https://img.shields.io/github/last-commit/jezd-7588/pre-commit-starter)
+![GitHub Tag](https://img.shields.io/github/v/tag/jezd-7588/pre-commit-starter)
+
 The code in this repo was created to make it easier for developers to get started with DevSecOps and shift left on security — as far left as you can get.
 
 ## What is Pre-commit?
