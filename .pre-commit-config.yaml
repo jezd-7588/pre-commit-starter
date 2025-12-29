@@ -19,4 +19,4 @@ repos:
         name: Run local pre-push script
         entry: ./tests/test_install.sh
         language: script
-        stages: [push]
+        stages: [pre-push]
