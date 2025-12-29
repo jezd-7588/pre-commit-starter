@@ -27,9 +27,6 @@ jobs:
         with:
           args: >
             detect
-            --report-format sarif
-            --report-path gitleaks.sarif
-            --log-opts="--no-merges --first-parent"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
