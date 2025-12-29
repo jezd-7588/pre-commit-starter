@@ -28,13 +28,11 @@ repos:
 EOF
 fi
 
-
   pre-commit install
 }
 
 pre_push(){
   echo "Setting up pre-push hook..."
-  # Add commands to set up pre-push hook here
 }
 
 # Call the function
