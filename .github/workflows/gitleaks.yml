@@ -13,16 +13,27 @@ on:
 
 jobs:
   gitleaks:
-    name: Run Gitleaks
+    name: Gitleaks (SARIF, diff-only)
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required so Gitleaks can scan history if needed
+          fetch-depth: 0
 
-      - name: Run Gitleaks
+      - name: Run Gitleaks (changed files only)
         uses: gitleaks/gitleaks-action@v2
+        with:
+          args: >
+            detect
+            --report-format sarif
+            --report-path gitleaks.sarif
+            --log-opts="--no-merges --first-parent"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload SARIF to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: gitleaks.sarif
