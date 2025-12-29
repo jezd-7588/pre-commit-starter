@@ -26,7 +26,27 @@ Pre-commit is a framework that manages Git hooks to run automated checks before 
 2. CD to the local repo where you want to set up pre-commit
 3. Run `bash ./path/to/pre-commit-starter/install.sh`
 
-The script will install the pre-commit framework and configure all hooks automatically.
+The script will install the pre-commit framework, into the target repo, and configure all hooks automatically.
+It will also create a file called `.pre-commit-config.yaml` in the root of your project. The `.pre-commit-config.yaml` file will contain the following:
+
+```yaml
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+```
+
+The above code is hooks for:
+
+1. remove trailing white space at the end of lines
+2. add empty line at the end of files
+3. check for hardcoded secrets
 
 ## Running Hooks
 
