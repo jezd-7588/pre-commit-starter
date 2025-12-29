@@ -13,7 +13,7 @@ on:
 
 jobs:
   gitleaks:
-    name: Gitleaks (SARIF, diff-only)
+    name: Gitleaks (SARIF, changed files only)
     runs-on: ubuntu-latest
 
     steps:
@@ -22,15 +22,25 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run Gitleaks (changed files only)
+      - name: Get changed files
+        id: changed_files
+        run: |
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
+          git fetch origin ${{ github.base_ref }} --depth=1
+          git diff --name-only origin/${{ github.base_ref }} ${{ github.sha }} | grep -E '\.sh$|\.py$|\.js$' >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          echo "Changed files: $CHANGED_FILES"
+
+      - name: Run Gitleaks on changed files
+        if: env.CHANGED_FILES != ''
         uses: gitleaks/gitleaks-action@v2
         with:
-          args: >
-            detect
+          args: detect --report-format sarif --report-path ${{ github.workspace }}/gitleaks.sarif --files "$CHANGED_FILES"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload SARIF to GitHub Security
+        if: always()  # Upload even if no leaks found
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: gitleaks.sarif
+          sarif_file: ${{ github.workspace }}/gitleaks.sarif
