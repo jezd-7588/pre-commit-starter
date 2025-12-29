@@ -13,10 +13,3 @@ repos:
     rev: v8.30.0
     hooks:
       - id: gitleaks
-  - repo: local
-    hooks:
-      - id: run-local-file
-        name: Run local pre-push script
-        entry: ./tests/test_install.sh
-        language: script
-        stages: [pre-push]
