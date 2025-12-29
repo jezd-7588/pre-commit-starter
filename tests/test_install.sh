@@ -4,7 +4,7 @@ set -e
 
 # Test setup
 TEST_DIR=$(mktemp -d)
-trap "rm -rf $TEST_DIR" EXIT
+trap 'rm -rf $TEST_DIR' EXIT
 
 cd "$TEST_DIR"
 
