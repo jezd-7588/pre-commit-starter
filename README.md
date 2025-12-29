@@ -1,4 +1,4 @@
-# pre-commit-starter
+# Pre-commit Starter
 
 The code in this repo was created to make it easier for developmers to get started with DevSecOps and shift left on security - as left as youi can get
 
