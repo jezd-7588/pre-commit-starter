@@ -20,5 +20,5 @@ jobs:
       - name: Make script executable
         run: chmod +x ./tests/test_install.sh
 
-      - name: Run local script
+      - name: Run unittests
         run: ./tests/test_install.sh
