@@ -41,9 +41,3 @@ jobs:
           args: detect --report-format sarif --report-path ${{ github.workspace }}/gitleaks.sarif --files "$CHANGED_FILES"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload SARIF to GitHub Security
-        if: always()  # Upload even if no leaks found
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: ${{ github.workspace }}/gitleaks.sarif
