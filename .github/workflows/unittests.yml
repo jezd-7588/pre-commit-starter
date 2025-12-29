@@ -1,0 +1,24 @@
+name: Run unitests on Push
+
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-local-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Make script executable
+        run: chmod +x ./tests/test_install.sh
+
+      - name: Run local script
+        run: ./tests/test_install.sh
