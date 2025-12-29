@@ -9,6 +9,9 @@ CALL_DIR="$(pwd)"
 start() {
   # run in calling directory
   cd "$CALL_DIR" || exit 1
+
+  # initialize git
+  git init
   pre_commit
 }
 
@@ -28,13 +31,11 @@ repos:
 EOF
 fi
 
-
   pre-commit install
 }
 
 pre_push(){
   echo "Setting up pre-push hook..."
-  # Add commands to set up pre-push hook here
 }
 
 # Call the function
