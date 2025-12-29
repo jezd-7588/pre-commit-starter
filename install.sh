@@ -9,6 +9,9 @@ CALL_DIR="$(pwd)"
 start() {
   # run in calling directory
   cd "$CALL_DIR" || exit 1
+
+  # initialize git
+  git init
   pre_commit
 }
 

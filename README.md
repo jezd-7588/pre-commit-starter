@@ -5,5 +5,5 @@ The code in this repo was created to make it easier for developmers to get start
 ## Getting started
 
 1. clone this repo
-2. CD to the repo where you want to set up pre-commit
+2. CD to the local repo where you want to set up pre-commit
 3. run `bash ./install.sh`
