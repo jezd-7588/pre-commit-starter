@@ -32,6 +32,10 @@ repos:
     rev: v8.30.0
     hooks:
       - id: gitleaks
+  - repo: https://github.com/standard/standard
+    rev: v17.1.2
+    hooks:
+      - id: standard
 EOF
 fi
 
