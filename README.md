@@ -36,14 +36,18 @@ It will also create a file called `.pre-commit-config.yaml` in the root of your 
 ```yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: <version>
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.30.0
+    rev: <version>
     hooks:
       - id: gitleaks
+  - repo: https://github.com/standard/standard
+    rev: <version>
+    hooks:
+      - id: standard
 ```
 
 The above code is hooks for:
@@ -51,6 +55,7 @@ The above code is hooks for:
 1. remove trailing white space at the end of lines
 2. add empty line at the end of files
 3. check for hardcoded secrets
+4. linting javascript
 
 ## Running Hooks
 
