@@ -1,5 +1,7 @@
 name: Run unitests on Push
-
+permissions:
+  contents: read
+  pull-requests: write
 
 on:
   push:
