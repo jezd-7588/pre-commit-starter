@@ -3,6 +3,11 @@
 ![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)
 ![GitHub last commit](https://img.shields.io/github/last-commit/jezd-7588/pre-commit-starter)
 ![GitHub Tag](https://img.shields.io/github/v/tag/jezd-7588/pre-commit-starter)
+![made-with-bash](https://img.shields.io/badge/made_with-bash-blue)
+![GitHub branch check runs](https://img.shields.io/github/check-runs/jezd-7588/pre-commit-starter/main)
+![gitleaks](https://img.shields.io/github/actions/workflow/status/jezd-7588/pre-commit-starter/gitleaks.yml?label=gitleaks)
+![shellcheck](https://img.shields.io/github/actions/workflow/status/jezd-7588/pre-commit-starter/shellcheck.yml?label=shellcheck)
+![unittests](https://img.shields.io/github/actions/workflow/status/jezd-7588/pre-commit-starter/unittests.yml?label=unittests)
 
 The code in this repo was created to make it easier for developers to get started with DevSecOps and shift left on security — as far left as you can get.
 
