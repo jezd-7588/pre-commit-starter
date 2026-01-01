@@ -9,8 +9,6 @@
 ![shellcheck](https://img.shields.io/github/actions/workflow/status/jezd-7588/pre-commit-starter/shellcheck.yml?label=shellcheck)
 ![unittests](https://img.shields.io/github/actions/workflow/status/jezd-7588/pre-commit-starter/unittests.yml?label=unittests)
 
-
-
 The code in this repo was created to make it easier for developers to get started with DevSecOps and shift left on security — as far left as you can get.
 
 ## What is Pre-commit?
