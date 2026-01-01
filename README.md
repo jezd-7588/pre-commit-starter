@@ -5,6 +5,7 @@
 ![GitHub Tag](https://img.shields.io/github/v/tag/jezd-7588/pre-commit-starter)
 ![made-with-bash](https://img.shields.io/badge/Made_with-Bash-blue)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jezd-7588/pre-commit-starter/gitleaks.yml?branch=main&label=Gitleaks)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jezd-7588/pre-commit-starter/shellcheck.yml?branch=main&label=SAST)
 
 
 The code in this repo was created to make it easier for developers to get started with DevSecOps and shift left on security — as far left as you can get.
