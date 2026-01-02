@@ -50,6 +50,18 @@ repos:
     rev: <version>
     hooks:
       - id: standard
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.104.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+        args:
+          - --args=-json
+          - --args=-no-color
+      - id: terraform_trivy
+        args:
+          - --args=--format=json
+          - --args=--skip-dirs="**/.terraform"
 ```
 
 The above code is hooks for:
@@ -58,6 +70,9 @@ The above code is hooks for:
 2. add empty line at the end of files
 3. check for hardcoded secrets
 4. linting javascript
+5. terraform format
+6. terraform_validate
+7. trivvy (security testing for terraform)
 
 ## Running Hooks
 
