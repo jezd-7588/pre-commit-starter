@@ -36,6 +36,18 @@ repos:
     rev: v17.1.2
     hooks:
       - id: standard
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.104.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+        args:
+          - --args=-json
+          - --args=-no-color
+      - id: terraform_trivy
+        args:
+          - --args=--format=json
+          - --args=--skip-dirs="**/.terraform"
 EOF
 fi
 
